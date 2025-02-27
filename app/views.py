@@ -1,4 +1,6 @@
 from app import app
+from datetime import datetime
+
 from flask import render_template, request, redirect, url_for, flash
 
 
@@ -20,7 +22,9 @@ def about():
 @app.route('/profile/')
 def profile():
     """Render website's profile page."""
-    return render_template('profile.html')
+    date_joined = datetime(2025, 2, 15)
+    formatted_date = format_date_joined(date_joined)
+    return render_template('profile.html', date_joined=formatted_date)
 
 
 ###
@@ -44,6 +48,9 @@ def add_header(response):
     response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
     response.headers['Cache-Control'] = 'public, max-age=0'
     return response
+
+def format_date_joined(date):
+    return date.strftime("%b, %Y") 
 
 
 @app.errorhandler(404)

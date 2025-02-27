@@ -1,5 +1,52 @@
 {% extends "base.html" %}
+
 {% block main %}
-<h1>Testing</h1>
+
+<div class="main">
+    <div class="profile container text-center bg-primary bg-gradient text-white">
+        <img src="{{ url_for('static', filename='images/roshaun1.jpeg') }}" 
+         class="img-fluid rounded-circle shadow-lg" 
+         style="width: 150px; height: 150px; object-fit: cover;" 
+         alt="Profile Picture">
+        <div class="row"><p>@roshaun09</p></div>
+        <div class="row"><p>Roshaun Marshall</p></div>
+        <div class="row"><p>Portmore, Jamaica</p></div>
+        <div class="row"><p>Joined: {{ date_joined }} </p></div>
+    </div>
+    <div class="container text-center .text-secondary-emphasis">
+        <p>I am a Computer Science student that enjoys playing video games and play music on my bass guitar.</p>
+    </div>
+    
+    
+    <div class="grid text-center .text-secondary-emphasis" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div>
+            <b>Posts</b>
+            <div class="grid">
+                <div>3</div>
+            </div>
+        </div>
+        <div>
+            <b>Following</b>
+            <div class="grid">
+                <div>2</div>
+            </div>
+        </div>
+        <div>
+            <b>Followers</b>
+            <div class="grid">
+                <div>100</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="button-c container d-flex flex-column justify-content-between p-20 m-10">
+        <button class="btn btn-primary align-self-center">Follow</button>
+    </div>
+</div>
+
+
+
+
+
 
 {% endblock %}
